@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+
+{
+
+// Ask the user to input a word while the word's length < 5
+
+  string word = "";
+
+  do
+
+    {
+
+      cout << "Enter a word that has at least 5 characters: " << endl;
+      getline(cin,word);
+
+    }
+
+while(int(word.size()) <5);
+
+// Ask the user to input a character
+
+  char searchCh = '0';
+
+  cout << "Enter a character and the program will tell you how many times it appears in the word " << word << "." << endl;
+
+  cin >> searchCh;
+
+  int counter = 0;
+
+// Iterate over the word
+
+  for (int i = 0; i < int(word.size()); i++)
+
+  {
+
+//   // Get a character
+      
+      char ch = word.at(i);
+
+//   // If the character matches the character we're loking for
+
+      if(searchCh == ch)
+
+      {
+
+//         // Increment a counter
+
+	counter++;
+
+      }
+  }
+// Output the number of times the character was found in the end
+
+  cout << "The number of '" << searchCh << "' in the word " << word << " is "\
+
+       << counter << "\n";
+  cout << "Thank you. Have a great day !";
+  return 0;
+}
